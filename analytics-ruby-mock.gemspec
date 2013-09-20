@@ -7,6 +7,6 @@ Gem::Specification.new do |s|
   s.authors     = ["Gavin Miller"]
   s.email       = 'gavin@petrofeed.com'
   s.files       = ["lib/analytics_ruby_mock.rb"]
-  s.homepage    = 'http://rubygems.org/gems/analytics-ruby-mock'
+  s.homepage    = 'https://github.com/PetroFeed/analytics-ruby-mock'
   s.license     = 'MIT'
 end
