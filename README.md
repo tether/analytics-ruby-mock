@@ -3,13 +3,15 @@ analytics-ruby-mock
 
 Capture all calls to Segment.io and prevent them from going to the server. Great for keeping your tests connection free!
 
-= Installation
+Installation
+----
 
 ```
 gem install analytics_ruby_mock
 ```
 
-= Usage
+Usage
+----
 
 Require analytics_ruby_mock in your `spec_helper`:
 
@@ -17,7 +19,8 @@ Require analytics_ruby_mock in your `spec_helper`:
 require 'analytics_ruby_mock'
 ```
 
-= Debugging
+Debugging
+----
 
 If you'd like to see your calls output to console while being run, call the `debug` method:
 
@@ -29,4 +32,4 @@ You'll get an output message any time a method on Analytics is called.
 
 ===
 
-PetroFeed
+Proudly brought to you by [PetroFeed](http://PetroFeed.com)
