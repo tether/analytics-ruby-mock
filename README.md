@@ -40,4 +40,4 @@ You'll get an output message any time a method on Analytics is called.
 
 ===
 
-Proudly brought to you by [PetroFeed](http://PetroFeed.com)
+Proudly brought to you by [PetroFeed](http://PetroFeed.com). Pull requests and issues always welcome. :kissing_heart:
