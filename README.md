@@ -13,11 +13,19 @@ gem install analytics_ruby_mock
 Usage
 ----
 
+Add `analytics_ruby_mock` to your gemfile:
+
+```ruby
+gem 'analytics_ruby_mock', group: :test
+```
+
 Require analytics_ruby_mock in your `spec_helper`:
 
 ```ruby
 require 'analytics_ruby_mock'
 ```
+
+That's it!
 
 Debugging
 ----
