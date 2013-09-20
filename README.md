@@ -1,6 +1,7 @@
-= Analytics Ruby Mock
+analytics-ruby-mock
+===================
 
-Prevent calls for Segment.io from going to the server. Great for keeping your tests connection free!
+Capture all calls to Segment.io and prevent them from going to the server. Great for keeping your tests connection free!
 
 = Installation
 
