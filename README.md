@@ -41,3 +41,6 @@ You'll get an output message any time a method on Analytics is called.
 ===
 
 Proudly brought to you by [PetroFeed](http://PetroFeed.com). Pull requests and issues always welcome. :kissing_heart:
+
+
+![Pedro](https://www.petrofeed.com/img/company/pedro.png)
