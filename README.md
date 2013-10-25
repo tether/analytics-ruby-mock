@@ -27,6 +27,34 @@ require 'analytics_ruby_mock'
 
 That's it!
 
+Asserting on Analytics
+----
+
+Analytics Ruby Mock provides you with the ability to test whether a call has occurred during your tests via counters.
+The following counters are available for you to check against: `track_count`, `identify_count`, and `alias_count`.
+Here's an example usage:
+
+```ruby
+describe 'show' do
+  before :each do
+    get :show, id: @company.id
+  end
+
+  it { Analytics.track_count.should == 1 }
+end
+```
+
+If this is something you decide to use, you'll need to clear the counts at the end of your tests. You can do that by
+calling `Analytics.clear_counts`. We keep that call in our `spec_helper`:
+
+```ruby
+config.after(:each) do
+  Analytics.clear_counts
+end
+```
+
+_Future plans would be to move that into a session so that the `clear_counts` could be removed._
+
 Debugging
 ----
 
