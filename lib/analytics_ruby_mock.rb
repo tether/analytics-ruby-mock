@@ -12,11 +12,6 @@ module AnalyticsRuby
       @track_calls << options
     end
 
-    def track_count
-      initialize if @track_calls.nil?
-      @track_calls.count
-    end
-
     def track_events
       @track_calls.collect { |t| t[:event] }
     end
@@ -31,11 +26,6 @@ module AnalyticsRuby
       @identify_calls << options
     end
 
-    def identify_count
-      initialize if @identify_calls.nil?
-      @identify_calls.count
-    end
-
     #############################################################
     # Alias #####################################################
 
@@ -44,11 +34,6 @@ module AnalyticsRuby
 
       initialize if @alias_calls.nil?
       @alias_calls << options
-    end
-
-    def alias_count
-      initialize if @alias_calls.nil?
-      @alias_calls.count
     end
 
     #############################################################

@@ -24,10 +24,6 @@ describe AnalyticsRuby do
       Analytics.track_calls.should == [{event: 'tracked', property: 'prop'}]
     end
 
-    it "returns count for saved events" do
-      Analytics.track_count.should == 1
-    end
-
     it "returns an array of events only" do
       Analytics.track_events.should == ['tracked']
     end
@@ -41,10 +37,6 @@ describe AnalyticsRuby do
     it "uses an array to save all calls with full options" do
       Analytics.identify_calls.should == [{event: 'identify', property: 'prop'}]
     end
-
-    it "returns count for saved events" do
-      Analytics.identify_count.should == 1
-    end
   end
 
   context "alias" do
@@ -54,10 +46,6 @@ describe AnalyticsRuby do
 
     it "uses an array to save events" do
       Analytics.alias_calls.should == [{event: 'alias', property: 'prop'}]
-    end
-
-    it "returns count for saved events" do
-      Analytics.alias_count.should == 1
     end
   end
 end

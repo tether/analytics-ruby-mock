@@ -67,7 +67,7 @@ config.after(:each) do
 end
 ```
 
-_Future plans would be to move that into a session so that the `clear_counts` could be removed._
+_Future plans would be to move that into a session so that the `clear` could be removed._
 
 Debugging
 ----
