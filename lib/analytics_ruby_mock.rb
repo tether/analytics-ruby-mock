@@ -2,6 +2,9 @@ module AnalyticsRuby
   module ClassMethods
     attr_accessor :track_calls, :identify_calls, :alias_calls
 
+    #############################################################
+    # Track #####################################################
+
     def track(options)
       debug_message(:track, options)
 
@@ -13,6 +16,13 @@ module AnalyticsRuby
       initialize if @track_calls.nil?
       @track_calls.count
     end
+
+    def track_events
+      @track_calls.collect { |t| t[:event] }
+    end
+
+    #############################################################
+    # Identify ##################################################
 
     def identify(options)
       debug_message(:identify, options)
@@ -26,6 +36,9 @@ module AnalyticsRuby
       @identify_calls.count
     end
 
+    #############################################################
+    # Alias #####################################################
+
     def alias(options)
       debug_message(:alias, options)
 
@@ -38,9 +51,15 @@ module AnalyticsRuby
       @alias_calls.count
     end
 
+    #############################################################
+    # Flush #####################################################
+
     def flush
       debug_message(:flush)
     end
+
+    #############################################################
+    # Mock Interface ############################################
 
     def debug
       @debug = true

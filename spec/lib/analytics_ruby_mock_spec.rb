@@ -17,25 +17,29 @@ describe AnalyticsRuby do
 
   context "track" do
     before :each do
-      Analytics.track(event: 'tracked')
+      Analytics.track(event: 'tracked', property: 'prop')
     end
 
-    it "uses an array to track events" do
-      Analytics.track_calls.should == [ {event: 'tracked' } ]
+    it "uses an array to save all calls with full options" do
+      Analytics.track_calls.should == [{event: 'tracked', property: 'prop'}]
     end
 
-    it "returns count for tracked events" do
+    it "returns count for saved events" do
       Analytics.track_count.should == 1
+    end
+
+    it "returns an array of events only" do
+      Analytics.track_events.should == ['tracked']
     end
   end
 
   context "identify" do
     before :each do
-      Analytics.identify(event: 'identify')
+      Analytics.identify(event: 'identify', property: 'prop')
     end
 
-    it "uses an array to save events" do
-      Analytics.identify_calls.should == [ {event: 'identify' } ]
+    it "uses an array to save all calls with full options" do
+      Analytics.identify_calls.should == [{event: 'identify', property: 'prop'}]
     end
 
     it "returns count for saved events" do
@@ -45,11 +49,11 @@ describe AnalyticsRuby do
 
   context "alias" do
     before :each do
-      Analytics.alias(event: 'alias')
+      Analytics.alias(event: 'alias', property: 'prop')
     end
 
     it "uses an array to save events" do
-      Analytics.alias_calls.should == [ {event: 'alias' } ]
+      Analytics.alias_calls.should == [{event: 'alias', property: 'prop'}]
     end
 
     it "returns count for saved events" do
