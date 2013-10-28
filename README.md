@@ -40,15 +40,21 @@ describe 'show' do
     get :show, id: @company.id
   end
 
-  it { Analytics.track_calls.should == [{ event: 'User Viewed Company Page', properties: '...' }] }
+  it "calls track for analytics" do
+    Analytics.track_calls.should == [
+      { event: 'User Viewed Company Page', properties: '...' }
+    ]
+  end
 end
 ```
 
 There's an additional helper for `track_events`. It provides an array of any `event` option that occurred during a track
-request _(this only applies to `track`, and not `identify` or `alias`.)_
+request _(this only applies to `track`, and not `identify` or `alias`)_
 
 ```ruby
-  it { Analytics.track_events.should == ['User Viewed Company Page'] }
+it "records 'User Viewed Company Page' as an event" do
+  Analytics.track_events.should == ['User Viewed Company Page']
+end
 ```
 
 You'll need to clear the collected data at the end of your tests. You can do that by calling `Analytics.clear`. We
