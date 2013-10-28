@@ -42,7 +42,7 @@ describe 'show' do
 
   it "calls track for analytics" do
     Analytics.track_calls.should == [
-      { event: 'User Viewed Company Page', properties: '...' }
+      { event: '...', properties: '...' }
     ]
   end
 end
@@ -53,6 +53,7 @@ request _(this only applies to `track`, and not `identify` or `alias`)_
 
 ```ruby
 it "records 'User Viewed Company Page' as an event" do
+  Analtics.track(event: 'User Viewed Company Page')
   Analytics.track_events.should == ['User Viewed Company Page']
 end
 ```
