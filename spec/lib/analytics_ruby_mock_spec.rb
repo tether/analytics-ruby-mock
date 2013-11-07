@@ -29,6 +29,14 @@ describe AnalyticsRuby do
     end
   end
 
+  context "track_events" do
+    it "does not throw an exception if track has not been called" do
+      expect {
+        Analytics.track_events
+      }.to_not raise_error
+    end
+  end
+
   context "identify" do
     before :each do
       Analytics.identify(event: 'identify', property: 'prop')
