@@ -48,13 +48,13 @@ describe 'show' do
 end
 ```
 
-There's an additional helper for `track_events`. It provides an array of any `event` option that occurred during a track
+There's an additional helper for `tracked_events`. It provides an array of any `event` option that occurred during a track
 request _(this only applies to `track`, and not `identify` or `alias`)_
 
 ```ruby
 it "records 'User Viewed Company Page' as an event" do
   Analtics.track(event: 'User Viewed Company Page')
-  Analytics.track_events.should == ['User Viewed Company Page']
+  Analytics.tracked_events.should == ['User Viewed Company Page']
 end
 ```
 

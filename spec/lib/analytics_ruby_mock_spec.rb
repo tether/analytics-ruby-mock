@@ -25,14 +25,14 @@ describe AnalyticsRuby do
     end
 
     it "returns an array of events only" do
-      Analytics.track_events.should == ['tracked']
+      Analytics.tracked_events.should == ['tracked']
     end
   end
 
-  context "track_events" do
+  context "tracked_events" do
     it "does not throw an exception if track has not been called" do
       expect {
-        Analytics.track_events
+        Analytics.tracked_events
       }.to_not raise_error
     end
   end
