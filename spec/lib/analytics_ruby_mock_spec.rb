@@ -27,7 +27,33 @@ describe AnalyticsRuby do
     it "returns an array of events only" do
       Analytics.tracked_events.should == ['tracked']
     end
+
+    context "given multiple trackes" do
+      before :each do
+	Analytics.track(event: 'tracked1', property: 'pop1')
+      end
+
+      it "saves all calls with full options" do
+	Analytics.track_calls.should == [
+	  { event: 'tracked', property: 'prop'},
+	  { event: 'tracked1', property: 'pop1' }
+	]
+      end
+
+      it "saves all events" do
+	Analytics.tracked_events.should == ['tracked', 'tracked1']
+      end
+
+      it "returns only the last event" do
+	Analytics.last_event.should == 'tracked1'
+      end
+
+      it "returns only the last call" do
+	Analytics.last_call.should == { event: 'tracked1', property: 'pop1' }
+      end
+    end
   end
+
 
   context "tracked_events" do
     it "does not throw an exception if track has not been called" do
