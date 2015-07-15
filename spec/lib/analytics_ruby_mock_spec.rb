@@ -1,8 +1,6 @@
 require 'analytics_ruby_mock'
 
-Analytics = AnalyticsRuby
-
-describe AnalyticsRuby do
+describe Analytics do
   after :each do
     Analytics.clear
   end

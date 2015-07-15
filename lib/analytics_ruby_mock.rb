@@ -1,4 +1,4 @@
-module AnalyticsRuby
+module Analytics
   module ClassMethods
     attr_accessor :track_calls, :identify_calls, :alias_calls
 
@@ -64,7 +64,7 @@ module AnalyticsRuby
 
     def debug_message(method, options = nil)
       if @debug
-        puts "Mock of AnalyticsRuby called #{method.to_s} #{options.present? ? "with: #{options}" : ""}"
+        puts "Mock of Analytics called #{method.to_s} #{options.present? ? "with: #{options}" : ""}"
       end
     end
   end
